@@ -1,0 +1,34 @@
+### Liste tous les pokémon
+GET http://localhost:3003/api/pokemons
+
+### Filtrer par type
+GET http://localhost:3003/api/pokemons?type=Feu
+
+### Un seul pokémon
+GET http://localhost:3003/api/pokemons/9
+
+### Pokémon inexistant (test 404)
+GET http://localhost:3003/api/pokemons/999
+
+### Créer un pokémon
+POST http://localhost:3003/api/pokemons
+Content-Type: application/json
+
+{
+  "name": "Mewtwo",
+  "hp": 50,
+  "cp": 10,
+  "picture": "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/150.png",
+  "types": ["Psychique"]
+}
+
+### Modifier les HP
+PATCH http://localhost:3003/api/pokemons/1
+Content-Type: application/json
+
+{
+  "hp": 99
+}
+
+### Supprimer un pokémon
+DELETE http://localhost:3003/api/pokemons/3
